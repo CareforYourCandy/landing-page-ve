@@ -8,6 +8,11 @@ export const setError = (error) => ({
   payload: error,
 });
 
+export const editUser = (user, index) => ({
+  type: "EDIT_USER",
+  payload: user,
+  index: index,
+});
 export const deleteUser = (index) => ({
   type: "DELETE_USER",
   payload: index,

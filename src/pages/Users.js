@@ -1,22 +1,26 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
-import { setUsers, setError, deleteUser } from "./redux/actions";
+import { setUsers, setError, deleteUser } from "../redux/actions";
 import PropTypes from "prop-types";
-
+import { useHistory } from "react-router-dom";
 function Users({ users, error, setError, setUsers, deleteUser }) {
+  const history = useHistory();
   function handleDelete(index) {
     deleteUser(index);
   }
   useEffect(() => {
-    (async () => {
-      const res = await fetch("https://jsonplaceholder.typicode.com/users");
-      if (!res.ok) setError("Error fetching users");
-      else {
-        const body = await res.json();
-        setUsers(body);
-      }
-    })();
-  }, [setError, setUsers]);
+    if (users.length === 0) {
+      (async () => {
+        const res = await fetch("https://jsonplaceholder.typicode.com/users");
+        if (!res.ok) setError("Error fetching users");
+        else {
+          const body = await res.json();
+          setUsers(body);
+        }
+      })();
+    }
+    console.log(users);
+  }, [users, setError, setUsers]);
   console.log(error);
   return (
     <>
@@ -30,6 +34,7 @@ function Users({ users, error, setError, setUsers, deleteUser }) {
               <th> phone </th>
               <th> username</th>
               <th> website </th>
+              <th> View user</th>
               <th> Delete user</th>
             </tr>
           </thead>
@@ -42,6 +47,12 @@ function Users({ users, error, setError, setUsers, deleteUser }) {
                   <td> {phone}</td>
                   <td> {username}</td>
                   <td> {website}</td>
+                  <td>
+                    <button onClick={() => history.push("/users/" + index)}>
+                      {" "}
+                      View{" "}
+                    </button>
+                  </td>
                   <td>
                     <button onClick={() => handleDelete(index)}>Delete</button>
                   </td>

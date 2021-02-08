@@ -1,5 +1,6 @@
 import React from "react";
 import "./styles.scss";
+import { Link } from "react-router-dom";
 export default function Header() {
   return (
     <header>
@@ -13,7 +14,7 @@ export default function Header() {
       </div>
       <div className="container-third right">
         <a href=".">Support </a>
-        <a href=".">Sign in </a>
+        <Link to="/users"> Sign in</Link>
       </div>
     </header>
   );
