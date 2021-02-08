@@ -16,7 +16,7 @@ function CurrentUser({ users, setUsers, setError, editUser }) {
         }
       })();
     }
-  }, []);
+  }, [setError, setUsers, users.length]);
   const { id } = useParams();
 
   function handleChange(key, index, newValue) {
