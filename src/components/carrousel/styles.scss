@@ -1,0 +1,19 @@
+.slide {
+  max-height: 150px;
+  max-width: 200px;
+
+  @media (min-width: 768px) {
+    max-height: 210px;
+    max-width: 280px;
+  }
+  @media (min-width: 1024px) {
+    max-height: 300px;
+    max-width: 400px;
+  }
+}
+
+.carrousel {
+  position: relative;
+  display: flex;
+  flex-flow: row nowrap;
+}

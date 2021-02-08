@@ -1,0 +1,28 @@
+$primary-gradient: linear-gradient(
+  90deg,
+  #6778e2 36%,
+  #6e5ebd 79%,
+  #7356b3 100%
+);
+
+.subtitle-button {
+  border: transparent;
+  font-weight: bold;
+  border-radius: 2%;
+  height: 40px;
+  width: 25%;
+  margin-bottom: 5px;
+  @media (min-width: 768px) {
+    width: 10%;
+  }
+}
+
+.button-primary {
+  background: $primary-gradient;
+  color: white;
+}
+
+.button-secondary {
+  background: white;
+  color: #7356b3;
+}

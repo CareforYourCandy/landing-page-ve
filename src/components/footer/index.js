@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import "./styles.scss";
 const sections = [
   {
     id: 0,
@@ -19,19 +20,26 @@ const sections = [
 ];
 function Footer() {
   return (
-    <div>
+    <div className="footer">
       {sections.map(({ id, title, links }) => (
         <React.Fragment key={id}>
           <FooterSection title={title} links={links} />
         </React.Fragment>
       ))}
+      <div className="footer-section">
+        <b sclassName="newsletter-title"> Newsletter </b>
+        <div className="newsletter-input">
+          <input></input>
+          <button> -{">"} </button>
+        </div>
+      </div>
     </div>
   );
 }
 
 function FooterSection({ title, links }) {
   return (
-    <div>
+    <div className="footer-section">
       <b> {title}</b>
       {links.map((link, i) => (
         <a href="." key={title + i}>
