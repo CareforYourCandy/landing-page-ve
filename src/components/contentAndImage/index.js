@@ -1,15 +1,17 @@
 import React from "react";
 import PropTypes from "prop-types";
-
+import "./styles.scss";
 function ContentAndImage({ title, text, buttonText, image }) {
   return (
-    <div>
+    <div className="cai-wrapper">
       <div className="container-content">
-        <b> {title}</b>
+        <h2> {title}</h2>
         <p> {text}</p>
-        {buttonText && <button> {buttonText} </button>}
+        {buttonText && (
+          <button className="button-cai button-primary"> {buttonText} </button>
+        )}
       </div>
-      {image && <img src="https://via.placeholder.com/80" />}
+      {image && <img className="cai-image" src={image} alt="placeholder" />}
     </div>
   );
 }

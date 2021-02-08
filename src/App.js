@@ -60,7 +60,14 @@ function App() {
             </React.Fragment>
           ))}
         </div>
-        <ContentAndImage />
+        <ContentAndImage
+          title={"Purchase anytime"}
+          text={
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam eaque nulla officia perspiciatis atque! Ex dolores consequuntur neque dignissimos quisquam ratione suscipit, sint, repellendus, voluptatibus tempore ea fugit cumque doloremque!"
+          }
+          buttonText={"Apply for card"}
+          image="https://via.placeholder.com/300x400"
+        />
         <SubtitleNText
           variant="h2"
           title="Choose Your Card"
